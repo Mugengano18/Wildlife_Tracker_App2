@@ -1,4 +1,5 @@
 import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Timer;
 
@@ -6,14 +7,14 @@ public class Sighting {
     private String Rname;
     private String location;
     private int animalId;
-    public Timestamp lastseen;
+    private Timestamp lastseen;
 
 
 
     private static ArrayList<Sighting> Sinstances =new ArrayList<>();
 
 
-    public Sighting(String Rname, String location,int animalId){
+    public Sighting(String Rname, String location){
         this.Rname=Rname;
         this.location=location;
         this.animalId=animalId;
@@ -35,6 +36,10 @@ public class Sighting {
 
     public Timestamp getLastseen() {
         return lastseen;
+    }
+
+    public String getDate(){
+        return DateFormat.getDateTimeInstance().format(lastseen);
     }
 
     public static ArrayList<Sighting> getSinstances() {

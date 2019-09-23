@@ -12,4 +12,15 @@ public class EndangeredAnimal extends Animals {
     public static ArrayList<EndangeredAnimal> Eall() {
         return Einstances;
     }
+    @Override
+    public boolean equals(Object secondAnimal){
+        if(!(secondAnimal instanceof EndangeredAnimal)){
+            return false;
+        }else{
+            EndangeredAnimal newAnimal =(EndangeredAnimal) secondAnimal;
+            return this.getName().equals(newAnimal.getName())&&
+                    this.getHealth().equals(newAnimal.getHealth())&&
+                    this.getAge().equals(newAnimal.getAge());
+        }
+    }
 }

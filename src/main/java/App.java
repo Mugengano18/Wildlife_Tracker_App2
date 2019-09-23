@@ -79,12 +79,13 @@ public class App {
             Map<String,Object> model=new HashMap<>();
             String name=request.queryParams("Rname");
             String location=request.queryParams("location");
-            int animal=Integer.parseInt(request.queryParams("animal2"));
-            Sighting newsight=new Sighting(name,location,animal);
+//            int animal=Integer.parseInt(request.params("animal2"));
+            Sighting newsight=new Sighting(name,location);
+            model.put("time",newsight.getDate());
             model.put("name",name);
             model.put("loc",location);
-
-            System.out.println(name);
+//            model.put("alanimal",animal);
+            System.out.println(newsight.getDate());
             System.out.println(location);
 //            System.out.println(animal);
             return new ModelAndView(model, "Sightingdisplay.hbs");
