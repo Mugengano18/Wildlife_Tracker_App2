@@ -1,4 +1,22 @@
 {{#partial "content"}}
-
+<div class="row">
+<div class="col-md-6">
+<h2>Endangered animals:<h2>
+{{#if endanger}}
+<p>{{endanger.name}}</p>
+<p>{{endanger.health}}</p>
+<p>{{endanger.age}}</p>
+{{else}}
+<p>no animal in danger yet</p>
+{{/if}}
+</div>
+<div class="col-md-6">
+<h2>Safe animals:</h2>
+<p>{{normal.name}}</p>
+<p>{{normal.health}}</p>
+<p>{{normal.age}}</p>
+</div>
+</div>
+<a href="/animal/form"><button type="submit" class="btn btn-success">Another animal</button></a>
 {{/partial}}
 {{>layout.hbs}}

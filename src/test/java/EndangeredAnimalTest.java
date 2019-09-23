@@ -25,4 +25,5 @@ public class EndangeredAnimalTest {
         assertEquals("adult",testEndanger.getAge());
     }
 
+
 }

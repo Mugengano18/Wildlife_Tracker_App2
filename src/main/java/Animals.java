@@ -33,5 +33,9 @@ public abstract class Animals {
         return age;
     }
 
+//    @Override
+//    public boolean equals(object secondAnimal){
+//        if (!(secondAnimal in))
+//    }
 
 }
