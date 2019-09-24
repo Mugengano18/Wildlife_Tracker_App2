@@ -35,11 +35,14 @@ public class App {
                 String health=request.queryParams("health");
                 String age=request.queryParams("age");
                 EndangeredAnimal newEndanger = new EndangeredAnimal(name,health,age);
+                EndangeredAnimal.save();
                 System.out.println(health);
                 model.put("name",name);
                 model.put("health",health);
                 model.put("age",age);
                 model.put("endanger",newEndanger);
+
+
             }else {
                 String name=request.queryParams("name");
                 String health=request.queryParams("health");

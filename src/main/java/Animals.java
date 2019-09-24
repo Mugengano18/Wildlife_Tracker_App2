@@ -46,18 +46,18 @@ public abstract class Animals {
         }
     }
 
-    public void save(){
-        try(Connection con=DB.sql2o.open()){
-            String sql="insert into animals(name,health,age,danger) values (:name,:health,:age,:danger)";
-            this.id = (int) con.createQuery(sql)
-                    .addParameter("name", this.name)
-                    .addParameter("health", this.health)
-                    .addParameter("age",this.age)
-                    .executeUpdate()
-                    .getKey();
-
-        }
-    }
+//    public static  void save(){
+//        try(Connection con=DB.sql2o.open()){
+//            String sql="insert into animals(name,health,age,danger) values (:name,:health,:age,:danger)";
+//            this.id = (int) con.createQuery(sql,true)
+//                    .addParameter("name", this.name)
+//                    .addParameter("health", this.health)
+//                    .addParameter("age",this.age)
+//                    .executeUpdate()
+//                    .getKey();
+//
+//        }
+//    }
     }
 
 
