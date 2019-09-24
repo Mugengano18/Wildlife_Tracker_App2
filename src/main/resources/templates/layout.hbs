@@ -1,0 +1,33 @@
+{{#block "header"}}
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Wildlife Tracker</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="css/App.css">
+    </head>
+{{/block}}
+<body style=style="background-image: url(images/image1.jpg);height:1000px;background-repeat:no-repeat;background-size:cover;">
+<ul class="nav nav-tabs">
+    <li role="presentation"><a href="/">Home</a></li>
+    <li role="presentation"><a href="/animals">Animals</a></li>
+    <li role="presentation"><a href="/sights">Sightings</a></li>
+</ul>
+<div class="container-fluid">
+    {{#block "content"}}
+
+    {{/block}}
+</div>
+{{#block "footer"}}
+<footer>
+    <div class="container">
+        <p>Copyright &copy; All Rights Reserved Wildlife_Track</p>
+    </div>
+</footer>
+{{/block}}
+</body>
+</html>
