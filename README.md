@@ -1,11 +1,11 @@
 # Wildlife_Tracker_App2
 
-##Written by
+## Written by
 
 - Mugengano Alice<br>
 
 Below is My app entry<br>
-<img src="entry.entry1.png">
+<img src="../entry.entry1.png">
 
 ## Description
 this is an App that helps animals to be know and to get help from rangers,here by the rangers
