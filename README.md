@@ -15,7 +15,9 @@ this is an App that helps animals to be know and to get help from rangers,here b
 ## Application setup
 
 - Use this link to access to the  app git repository [wildlife tracker](https://github.com/Mugengano18/Wildlife_Tracker_App2/tree/simple_code)
-- And while doing the project make sure you include the following dependencies:
+- And while doing the project make sure you include the following dependencies:<br>
+
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile "com.sparkjava:spark-core:2.6.0"
@@ -39,7 +41,7 @@ dependencies {
 
 
 
-##MIT License
+## MIT License
 
 Copyright (c) 2019 Mugengano18
 
