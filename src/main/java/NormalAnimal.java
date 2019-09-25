@@ -5,7 +5,7 @@ import java.util.List;
 
 public class NormalAnimal extends Animals {
     private static ArrayList<NormalAnimal> Ninstances =new ArrayList<>();
-    public NormalAnimal(String name,String health,String age){
+    public NormalAnimal(String name,String health,String age,boolean danger){
         this.name=name;
         this.health=health;
         this.age=age;
@@ -29,16 +29,17 @@ public class NormalAnimal extends Animals {
             return animal2;
         }
     }
-    public void save(){
-        try(Connection con=DB.sql2o.open()){
-            String sql="insert into animals(name,health,age,danger) values (:Ename,:health,:age,:danger)";
-            this.id = (int) con.createQuery(sql,true)
-                    .addParameter("name", this.name)
-                    .addParameter("health", this.health)
-                    .addParameter("age",this.age)
-                    .executeUpdate()
-                    .getKey();
-
-        }
-    }
+//    @Override
+//    public void save(){
+//        try(Connection con=DB.sql2o.open()){
+//            String sql="update animals set name=:name, health=:health, age=:age where id=:id";
+//            this.id = (int) con.createQuery(sql,true)
+//                    .addParameter("name", this.name)
+//                    .addParameter("health", this.health)
+//                    .addParameter("age",this.age)
+//                    .executeUpdate()
+//                    .getKey();
+//
+//        }
+//    }
 }

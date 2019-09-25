@@ -1,6 +1,7 @@
 import org.sql2o.Connection;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 public abstract class Animals {
@@ -22,8 +23,11 @@ public abstract class Animals {
 
 
     public boolean isDanger() {
+        System.out.println(danger);
         return danger;
     }
+
+
 
     public String getHealth() {
         return health;
@@ -33,31 +37,40 @@ public abstract class Animals {
         return age;
     }
 
-    @Override
-    public boolean equals(Object otherAnimal){
-        if (!(otherAnimal instanceof Animals)) {
-            return false;
-        } else {
-            Animals newAnimal = (Animals) otherAnimal;
-            return this.getName().equals(newAnimal.getName()) &&
-                    this.getHealth().equals(newAnimal.getHealth())&&
-                    this.getAge().equals(newAnimal.getAge());
+
+//@Override
+//public boolean equals(Object o) {
+//    if (this == o) return true;
+//    if (o == null || getClass() != o.getClass()) return false;
+//    Animals animals = (Animals) o;
+//    return id == animals.id &&
+//            danger == animals.danger &&
+//            Objects.equals(name, animals.name) &&
+//            Objects.equals(health, animals.health) &&
+//            Objects.equals(age, animals.age);
+//}
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name, health, age, danger);
+//    }
+
+
+
+
+    public  void save(){
+        try(Connection con=DB.sql2o.open()){
+            String sql="insert into animals(name,health,age,danger) values (:name,:health,:age,:danger)";
+            this.id = (int) con.createQuery(sql,true)
+                    .addParameter("name", this.name)
+                    .addParameter("health", this.health)
+                    .addParameter("age",this.age)
+                    .addParameter("danger",this.danger)
+                    .executeUpdate()
+                    .getKey();
 
         }
     }
-
-//    public static  void save(){
-//        try(Connection con=DB.sql2o.open()){
-//            String sql="insert into animals(name,health,age,danger) values (:name,:health,:age,:danger)";
-//            this.id = (int) con.createQuery(sql,true)
-//                    .addParameter("name", this.name)
-//                    .addParameter("health", this.health)
-//                    .addParameter("age",this.age)
-//                    .executeUpdate()
-//                    .getKey();
-//
-//        }
-//    }
     }
 
 

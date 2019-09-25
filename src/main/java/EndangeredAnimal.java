@@ -6,7 +6,7 @@ import java.util.List;
 
 public class EndangeredAnimal extends Animals {
     private static ArrayList<EndangeredAnimal> Einstances =new ArrayList<>();
-    public EndangeredAnimal(String Ename,String health,String Age){
+    public EndangeredAnimal(String Ename,String health,String Age,boolean danger){
         this.name=Ename;
         this.health=health;
         this.age=Age;
@@ -30,7 +30,7 @@ public class EndangeredAnimal extends Animals {
 
 
     public static List<EndangeredAnimal>all(){
-        String sql ="select * from animals";
+        String sql ="select * from animals where danger=true";
         try(Connection con=DB.sql2o.open()){
             return con.createQuery(sql).executeAndFetch(EndangeredAnimal.class);
         }
@@ -46,4 +46,19 @@ public class EndangeredAnimal extends Animals {
 
         }
     }
+
+//    @Override
+//    public void save(){
+//        try(Connection con=DB.sql2o.open()){
+//            String sql="update animals set name=:name, health=:health, age=:age where id=:id";
+//            this.id = (int) con.createQuery(sql,true)
+//                    .addParameter("name", this.name)
+//                    .addParameter("health", this.health)
+//                    .addParameter("age",this.age)
+//                    .throwOnMappingFailure(false)
+//                    .executeUpdate()
+//                    .getKey();
+//
+//        }
+//    }
 }
