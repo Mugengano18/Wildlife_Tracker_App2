@@ -29,16 +29,16 @@ public class NormalAnimal extends Animals {
             return animal2;
         }
     }
-    public void save(){
-        try(Connection con=DB.sql2o.open()){
-            String sql="insert into animals(name,health,age,danger) values (:Ename,:health,:age,:danger)";
-            this.id = (int) con.createQuery(sql,true)
-                    .addParameter("name", this.name)
-                    .addParameter("health", this.health)
-                    .addParameter("age",this.age)
-                    .executeUpdate()
-                    .getKey();
-
-        }
-    }
+//    public void save(){
+//        try(Connection con=DB.sql2o.open()){
+//            String sql="insert into animals(name,health,age,danger) values (:Ename,:health,:age,:danger)";
+//            this.id = (int) con.createQuery(sql,true)
+//                    .addParameter("name", this.name)
+//                    .addParameter("health", this.health)
+//                    .addParameter("age",this.age)
+//                    .executeUpdate()
+//                    .getKey();
+//
+//        }
+//    }
 }

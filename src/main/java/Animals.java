@@ -1,8 +1,5 @@
 import org.sql2o.Connection;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+
 public abstract class Animals {
     public int  id;
     public String name;
@@ -46,18 +43,18 @@ public abstract class Animals {
         }
     }
 
-//    public static  void save(){
-//        try(Connection con=DB.sql2o.open()){
-//            String sql="insert into animals(name,health,age,danger) values (:name,:health,:age,:danger)";
-//            this.id = (int) con.createQuery(sql,true)
-//                    .addParameter("name", this.name)
-//                    .addParameter("health", this.health)
-//                    .addParameter("age",this.age)
-//                    .executeUpdate()
-//                    .getKey();
-//
-//        }
-//    }
+    public void save(){
+        try(Connection con=DB.sql2o.open()){
+            String sql="insert into animals(name,health,age,danger) values (:name,:health,:age,:danger)";
+            this.id = (int) con.createQuery(sql,true)
+                    .addParameter("name", this.name)
+                    .addParameter("health", this.health)
+                    .addParameter("age",this.age)
+                    .executeUpdate()
+                    .getKey();
+
+        }
+    }
     }
 
 
