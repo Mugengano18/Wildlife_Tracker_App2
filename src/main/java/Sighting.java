@@ -13,7 +13,8 @@ public class Sighting {
     private static ArrayList<Sighting> Sinstances =new ArrayList<>();
 
 
-    public Sighting(String Rname, String location,String animal){
+
+    public Sighting(String Rname, String location, String animal){
         this.Rname=Rname;
         this.location=location;
         this.animal=animal;
@@ -45,9 +46,10 @@ public class Sighting {
         return location;
     }
 
-    public String getAnimalId() {
+    public String getAnimal() {
         return animal;
     }
+
 
 
 //    public static ArrayList<Sighting> getSinstances() {
@@ -56,7 +58,7 @@ public class Sighting {
 
     public  void save(){
         try(Connection con=DB.sql2o.open()){
-            String sql="insert into sightings(rangername ,zone,animal) values (:name,:location,:animal)";
+            String sql="insert into sightings(rangername ,zone,animal) values (:Rname,:location,:animal)";
             this.id = (int) con.createQuery(sql,true)
                     .addParameter("name", this.Rname)
                     .addParameter("zone", this.location)

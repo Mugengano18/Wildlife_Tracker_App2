@@ -93,20 +93,19 @@ public class App {
             String location=request.queryParams("location");
             String animal=request.queryParams("animal2");
             Sighting newsight=new Sighting(name,location,animal);
-            model.put("name",name);
+            model.put("Rname",name);
             model.put("loc",location);
             model.put("animal",animal);
             model.put("sighting",newsight);
-            newsight.save();
-            System.out.println(location);
+            System.out.println(newsight);
             return new ModelAndView(model, "savesighting.hbs");
         }), new HandlebarsTemplateEngine());
 
         get("/sights",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
-//            List<Sighting>sights=Sighting.all();
-//            model.put("sights",sights);/
-//            System.out.println(sights);
+            List<Sighting>sights=Sighting.all();
+            model.put("sights",sights);
+            System.out.println(sights);
             return new ModelAndView(model, "Sightingdisplay.hbs");
         }), new HandlebarsTemplateEngine());
 
