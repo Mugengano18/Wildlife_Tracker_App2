@@ -1,6 +1,45 @@
 # Wildlife_Tracker_App2
-this is an App that helps animals to be know and to get help from rangers
-MIT License
+
+##Written by
+
+- Mugengano Alice<br>
+
+Below is My app entry
+<img src="/entry.entry1.png">
+
+## Description
+this is an App that helps animals to be know and to get help from rangers,here by the rangers
+ in the park are in charge of reporting any animal found in the park because there are some rare animals that
+  are growing to be few so tha is why we need t help them to not die but survive.
+
+##Application setup
+
+- Use this link to access to the  app git repository[wildlife tracker](https://github.com/Mugengano18/Wildlife_Tracker_App2/tree/simple_code)
+- And while doing the project make sure you include the following dependencies:
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.sparkjava:spark-core:2.6.0"
+    compile "com.sparkjava:spark-template-handlebars:2.5.5"
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+    compile 'org.sql2o:sql2o:1.5.4'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.191'
+    compile group:'org.postgresql',name: 'postgresql',version: "42.2.2"
+}
+- I created also the database to Enter in my tables:
+
+
+
+
+
+
+
+
+
+
+
+
+
+##MIT License
 
 Copyright (c) 2019 Mugengano18
 
