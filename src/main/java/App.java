@@ -104,9 +104,9 @@ public class App {
 
         get("/sights",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
-            List<Sighting>sights=Sighting.all();
-            model.put("sights",sights);
-            System.out.println(sights);
+//            List<Sighting>sights=Sighting.all();
+//            model.put("sights",sights);/
+//            System.out.println(sights);
             return new ModelAndView(model, "Sightingdisplay.hbs");
         }), new HandlebarsTemplateEngine());
 

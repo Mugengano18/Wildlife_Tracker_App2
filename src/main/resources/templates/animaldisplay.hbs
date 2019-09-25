@@ -4,7 +4,7 @@
 <div class="col-md-6">
 <table>
 <tr>
-<th><h3 style="text-align:center;">Endagered animals:<h3></th>
+<th><h3 style="text-align:center;font-family: 'Open Sans Condensed', sans-serif;">Endagered animals:<h3></th>
 </tr>
 {{#if endanger}}
 {{#each endanger}}
@@ -22,7 +22,7 @@ Age:{{age}}<br>
 <div class="col-md-6">
 <table>
 <tr>
-<th><h3 style="text-align:center;">Safe animals:<h3></th>
+<th><h3 style="text-align:center;font-family: 'Open Sans Condensed', sans-serif;">Safe animals:<h3></th>
 </tr>
 {{#if normal}}
 {{#each normal}}
@@ -37,7 +37,7 @@ Age:{{age}}<br>
 {{/if}}
 </table>
 </div>
-<a href="/animal/form"><button type="submit" class="btn btn-teal btn-rounded btn-sm m-0">Another animal</button></a>
+<a href="/animal/form"><button type="submit" class="btn btn-success">Another animal</button></a>
 </div>
 </div>
 {{/partial}}
@@ -53,23 +53,12 @@ th{
 }
 td {
  border-bottom: 1px solid white;
+ color:white;
+ font-family: 'Abel', sans-serif;
+ font-size:20px;
 }
 button{
-position: absolute;
-  top: 80%;
-  left: 650px;
-  background-color: #f1f1f1;
-  color: black;
-  font-size: 60px;
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-button:hover{
-background-color: black;
-  color: white;
+margin-top:200px;
 }
 h3{
 font-size:40px;

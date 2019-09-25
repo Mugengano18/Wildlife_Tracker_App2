@@ -1,9 +1,7 @@
 import org.sql2o.Connection;
-import java.sql.Time;
-import java.util.ArrayList;
+
 import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
+
 public abstract class Animals {
     public int  id;
     public String name;
@@ -38,22 +36,22 @@ public abstract class Animals {
     }
 
 
-//@Override
-//public boolean equals(Object o) {
-//    if (this == o) return true;
-//    if (o == null || getClass() != o.getClass()) return false;
-//    Animals animals = (Animals) o;
-//    return id == animals.id &&
-//            danger == animals.danger &&
-//            Objects.equals(name, animals.name) &&
-//            Objects.equals(health, animals.health) &&
-//            Objects.equals(age, animals.age);
-//}
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, name, health, age, danger);
-//    }
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Animals animals = (Animals) o;
+    return id == animals.id &&
+            danger == animals.danger &&
+            Objects.equals(name, animals.name) &&
+            Objects.equals(health, animals.health) &&
+            Objects.equals(age, animals.age);
+}
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, health, age, danger);
+    }
 
 
 
