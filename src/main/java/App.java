@@ -31,7 +31,7 @@ public class App {
         post("/animal/new",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
             boolean danger = request.queryParamsValues("endager")!= null;
-            if(danger==false){
+            if(danger== true){
                 String name=request.queryParams("name");
                 String health=request.queryParams("health");
                 String age=request.queryParams("age");
@@ -39,12 +39,12 @@ public class App {
                 model.put("name",name);
                 model.put("health",health);
                 model.put("age",age);
+                model.put("danger",danger);
                 model.put("endanger",newEndanger);
-                model.put("danger",newEndanger.isDanger());
-
+                System.out.println(danger);
                 newEndanger.save();
 
-            }else {
+            }else if(danger==false) {
                 String name=request.queryParams("name");
                 String health=request.queryParams("health");
                 String age=request.queryParams("age");
@@ -53,6 +53,7 @@ public class App {
                 model.put("name",name);
                 model.put("health",health);
                 model.put("age",age);
+                model.put("danger",danger);
                 model.put("normal",newNormal);
                 newNormal.save();
                 System.out.println(danger);
@@ -65,39 +66,45 @@ public class App {
         //getting all the animals
         get("/animals",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
-            boolean danger = request.queryParamsValues("endager")!= null;
-            if (danger){
                 List<EndangeredAnimal> endangeredAnimals=EndangeredAnimal.all();
                 model.put("endanger",endangeredAnimals);
-            }else{
+                System.out.println(endangeredAnimals);
                 List<NormalAnimal> normal=NormalAnimal.all();
                 model.put("normal",normal);
-            }
+                System.out.println(normal);
             return new ModelAndView(model, "animaldisplay.hbs");
         }), new HandlebarsTemplateEngine());
 
 
+        //Sighting form
         get("/sighting/new",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
-//            EndangeredAnimal animal=EndangeredAnimal.all();
+            List<EndangeredAnimal>animals=EndangeredAnimal.all();
+            model.put("animals",animals);
             return new ModelAndView(model, "SightForm.hbs");
         }), new HandlebarsTemplateEngine());
 
+
+
+        //posting the animals infos
         post("/sighting/new",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
             String name=request.queryParams("Rname");
             String location=request.queryParams("location");
-
-//            Sighting newsight=new Sighting(name,location);
+            String animal=request.queryParams("animal2");
+            Sighting newsight=new Sighting(name,location,animal);
             model.put("name",name);
             model.put("loc",location);
+            model.put("animal",animal);
+            model.put("sighting",newsight);
+            newsight.save();
             System.out.println(location);
-            return new ModelAndView(model, "Sightingdisplay.hbs");
+            return new ModelAndView(model, "savesighting.hbs");
         }), new HandlebarsTemplateEngine());
 
-        post("/sights",((request, response) -> {
+        get("/sights",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
-            ArrayList<Sighting>sights=Sighting.getSinstances();
+            List<Sighting>sights=Sighting.all();
             model.put("sights",sights);
             System.out.println(sights);
             return new ModelAndView(model, "Sightingdisplay.hbs");

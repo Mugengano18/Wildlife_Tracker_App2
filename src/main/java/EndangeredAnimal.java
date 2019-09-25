@@ -11,7 +11,7 @@ public class EndangeredAnimal extends Animals {
         this.health=health;
         this.age=Age;
         Einstances.add(this);
-        danger=true;
+        this.danger=danger;
     }
     public static ArrayList<EndangeredAnimal> Eall() {
         return Einstances;
@@ -30,7 +30,7 @@ public class EndangeredAnimal extends Animals {
 
 
     public static List<EndangeredAnimal>all(){
-        String sql ="select * from animals where danger=true";
+        String sql ="select * from animals where danger='t'";
         try(Connection con=DB.sql2o.open()){
             return con.createQuery(sql).executeAndFetch(EndangeredAnimal.class);
         }

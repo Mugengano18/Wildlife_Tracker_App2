@@ -1,4 +1,78 @@
 {{#partial "content"}}
-<a href="/animal/form"><button type="submit" class="btn btn-success">Another animal</button></a>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-6">
+<table>
+<tr>
+<th><h3 style="text-align:center;">Endagered animals:<h3></th>
+</tr>
+{{#if endanger}}
+{{#each endanger}}
+<tr>
+<td>
+Name:{{name}}<br>
+Health:{{health}}<br>
+Age:{{age}}<br>
+</td>
+</tr>
+{{/each}}
+{{/if}}
+</table>
+</div>
+<div class="col-md-6">
+<table>
+<tr>
+<th><h3 style="text-align:center;">Safe animals:<h3></th>
+</tr>
+{{#if normal}}
+{{#each normal}}
+<tr>
+<td>
+name:{{name}}<br>
+Health:{{health}}<br>
+Age:{{age}}<br>
+</td>
+</tr>
+{{/each}}
+{{/if}}
+</table>
+</div>
+<a href="/animal/form"><button type="submit" class="btn btn-teal btn-rounded btn-sm m-0">Another animal</button></a>
+</div>
+</div>
 {{/partial}}
 {{>layout.hbs}}
+<style>
+table {
+width: 600px;
+margin-top:20px;
+text-align:center;
+}
+th{
+ border-bottom: 1px solid white;
+}
+td {
+ border-bottom: 1px solid white;
+}
+button{
+position: absolute;
+  top: 80%;
+  left: 650px;
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 60px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+button:hover{
+background-color: black;
+  color: white;
+}
+h3{
+font-size:40px;
+color:white;
+}
+</style>

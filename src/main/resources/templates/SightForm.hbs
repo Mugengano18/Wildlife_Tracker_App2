@@ -14,10 +14,9 @@
             <div class="form-group">
                 <label for="animal" style="color:white;">What animal did you see:</label>
                 <select class="form-control" id="sel1" name="animal2">
-                    <option></option>
-                    <option>Healthy</option>
-                    <option>Okay</option>
-                    <option>Ill</option>
+                {{#each animals}}
+                    <option>{{name}}</option>
+                    {{/each}}
                 </select>
             </div>
             <div class="form-group">

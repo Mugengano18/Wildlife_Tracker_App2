@@ -10,13 +10,13 @@ public class NormalAnimal extends Animals {
         this.health=health;
         this.age=age;
         Ninstances.add(this);
-        danger=false;
+        this.danger=danger;
     }
     public static ArrayList<NormalAnimal>NAll() {
         return Ninstances;
     }
     public static List<NormalAnimal>all(){
-        String sql="select *from animals";
+        String sql="select *from animals where danger='f'";
         try(Connection connect=DB.sql2o.open()){
             return connect.createQuery(sql).executeAndFetch(NormalAnimal.class);
         }
