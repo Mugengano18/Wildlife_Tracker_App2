@@ -25,6 +25,14 @@ this is an App that helps animals to be know and to get help from rangers,here b
 
 the tables are animals which will store all the animals and the one of rangers to store all the relevant information
 
+
+## Technologies used
+
+- Java
+- Handlebars
+- Spark framework
+- Postgres
+- CSS
 ## Contacts
 
 - Email:mugenganoa@gmail.com
