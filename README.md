@@ -29,6 +29,7 @@ dependencies {
 }
 - I created also the database to Enter in my tables:
 
+the tables are animals which will store all the animals and the one of rangers to store all the relevant information
 
 
 

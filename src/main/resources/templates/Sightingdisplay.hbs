@@ -5,13 +5,15 @@
 <div class="col-md-6">
 <table>
 <tr>
-<th><h3 style="text-align:center;font-family: 'Open Sans Condensed', sans-serif;">Sightings Are:</h3></th>
+<th><h3 style="text-align:center;font-family: 'Open Sans Condensed', sans-serif;">the animals in danger Are:</h3></th>
 </tr>
 <tr>
 <td>
-<p>Name:{{Rname}}</p>
-<p>Location:{{loc}}</p>
-<p>Animal seen:{{animal}}</p>
+{{#if sights}}
+{{#each sights}}
+<p>{{animal}}</p>
+{{/each}}
+{{/if}}
 </td>
 </tr>
 </table>
