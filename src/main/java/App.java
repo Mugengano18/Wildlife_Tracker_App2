@@ -80,7 +80,9 @@ public class App {
         get("/sighting/new",((request, response) -> {
             Map<String,Object> model=new HashMap<>();
             List<EndangeredAnimal>animals=EndangeredAnimal.all();
+            List<NormalAnimal> normal=NormalAnimal.all();
             model.put("animals",animals);
+            model.put("animals2",normal);
             return new ModelAndView(model, "SightForm.hbs");
         }), new HandlebarsTemplateEngine());
 
