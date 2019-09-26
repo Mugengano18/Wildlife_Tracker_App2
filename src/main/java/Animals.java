@@ -36,24 +36,6 @@ public abstract class Animals {
     }
 
 
-@Override
-public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Animals animals = (Animals) o;
-    return id == animals.id &&
-            danger == animals.danger &&
-            Objects.equals(name, animals.name) &&
-            Objects.equals(health, animals.health) &&
-            Objects.equals(age, animals.age);
-}
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, health, age, danger);
-    }
-
-
 
 
     public  void save(){
@@ -69,6 +51,7 @@ public boolean equals(Object o) {
 
         }
     }
+
     }
 
 
